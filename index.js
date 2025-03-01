@@ -5,7 +5,7 @@ const cors = require("cors");
 const port = 7095;
 const app = express();
 const cron  = require("node-cron");
-const Event = require("../BACKEND/models/eventmodel");
+const Event = require("./models/eventmodel");
 const sendEmail = require("./emailService");
 
 
@@ -15,8 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 
 dotenv.config();
 
-const eventRoutes = require("../BACKEND/routes/eventRoutes")
-const userRoutes = require("../BACKEND/routes/userRoutes")
+const eventRoutes = require("./routes/eventRoutes")
+const userRoutes = require("./routes/userRoutes")
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
